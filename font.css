@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'AppleSDGothic';
+  src: url('./public/static/fonts/AppleSDGothicNeoM.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AppleSDGothic';
+  src: url('./public/static/fonts/AppleSDGothicNeoB.ttf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'AppleSDGothic';
+  src: url('./public/static/fonts/AppleSDGothicNeoL.ttf') format('opentype');
+  font-weight: lighter;
+  font-style: normal;
+}
