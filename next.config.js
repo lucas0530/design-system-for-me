@@ -7,15 +7,15 @@ const nextConfig = {
     domains: [],
   },
 
-  // async redirects() {
-  //   return [
-  //     {
-  //       source: '/',
-  //       destination: '/',
-  //       permanent: true,
-  //     },
-  //   ];
-  // },
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/sample',
+        permanent: true,
+      },
+    ];
+  },
 
   webpack: (config) => {
     config.plugins.push(new Dotenv({ silent: true }));
