@@ -1,6 +1,6 @@
-import _get from "lodash/get";
+import _get from 'lodash/get';
 
-import colors from "@/constants/themeAssets/colors";
+import colors from '@/constants/themeAssets/colors';
 
 import type {
   CreateTypographyParams,
@@ -11,9 +11,17 @@ import type {
   ScreenSize,
   Typography,
   TypographyWeight,
-} from "@/types/emotion";
+} from '@/types/emotion';
 
 const MULTIPLE = 4;
+
+/**
+ * 공통 사이즈를 가져오는 함수입니다. (단위: px)
+ */
+
+export const getSize = (size: number) => {
+  return `${size * MULTIPLE}px`;
+};
 
 /**
  * 마진 값을 스타일링하는 함수입니다.
@@ -25,13 +33,13 @@ export const marginSpacingStyle = (props: MarginSpacing): string => {
 
   return margins
     .reduce<string[]>((arr, [position, value]) => {
-      if (typeof value === "number") {
-        arr.push(`margin-${position}: ${(value ?? 0) * MULTIPLE}px`);
+      if (typeof value === 'number') {
+        arr.push(`margin-${position}: ${getSize(value)}`);
       }
 
       return arr;
     }, [])
-    .join(";");
+    .join(';');
 };
 
 /**
@@ -43,11 +51,9 @@ export const paddingSpacingStyle = (props: PaddingSpacing): string => {
   const paddings = Object.entries({ top: pt, bottom: pb, left: pl, right: pr });
 
   return paddings
-    .filter(([_position, value]) => typeof value === "number")
-    .map(
-      ([position, value]) => `padding-${position}: ${(value ?? 0) * MULTIPLE}px`
-    )
-    .join(";");
+    .filter(([_position, value]) => typeof value === 'number')
+    .map(([position, value]) => `padding-${position}: ${getSize(value ?? 0)}`)
+    .join(';');
 };
 
 /**
@@ -78,17 +84,17 @@ export const createTypography = ({
   return {
     light: createTypographyToken({
       fontSize,
-      fontWeight: "light",
+      fontWeight: 'light',
       lineHeight,
     }),
     regular: createTypographyToken({
       fontSize,
-      fontWeight: "normal",
+      fontWeight: 'normal',
       lineHeight,
     }),
     bold: createTypographyToken({
       fontSize,
-      fontWeight: "bold",
+      fontWeight: 'bold',
       lineHeight,
     }),
     semiBold: createTypographyToken({
@@ -104,14 +110,14 @@ export const createTypography = ({
  */
 export function buildMediaQuery(screenSize: ScreenSize, not?: boolean): string {
   const { minWidth, maxWidth } = screenSize;
-  let query = "@media ";
+  let query = '@media ';
 
   if (minWidth) {
     query += `(min-width: ${minWidth}px)`;
   }
 
   if (minWidth && maxWidth) {
-    query += " and ";
+    query += ' and ';
   }
 
   if (maxWidth) {
