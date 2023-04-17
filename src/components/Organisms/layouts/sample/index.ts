@@ -13,11 +13,9 @@ export const [SampleProvider, useCount, useCountIncrement, useCountDecrement] = 
 );
 
 const SampleLayout = compoundBuilder(SampleProvider, {
-  compound: {
-    Header: SampleHeader,
-    Body: SampleBody,
-    Footer: SampleFooter,
-  },
+  Header: SampleHeader,
+  Body: SampleBody,
+  Footer: SampleFooter,
 });
 
 export default SampleLayout;

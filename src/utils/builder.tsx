@@ -1,5 +1,3 @@
-import React from 'react';
-
 /**
  * 기존 컴파운드 컴포넌트 작성 방식은 매번 타입을 수기 작성하고 캐스팅해야했기 때문에 이를 함수로 제공하기 위해 작성하였습니다.
  *
@@ -15,37 +13,15 @@ export const compoundBuilder = <
   >,
 >(
   LayoutComponent: React.FC<LayoutComponentType>,
-  CompoundComponent: {
-    compound?: CompoundComponentType;
-    wrapper?: React.FC;
-  },
+  CompoundComponent: CompoundComponentType,
 ) => {
-  const _layout = (
-    CompoundComponent.wrapper
-      ? wrapperComponentBuilder(CompoundComponent.wrapper, LayoutComponent)
-      : LayoutComponent
-  ) as typeof LayoutComponent & CompoundComponentType;
+  const _layout = LayoutComponent as typeof LayoutComponent & CompoundComponentType;
 
-  if (CompoundComponent.compound) {
-    Object.entries(CompoundComponent.compound).forEach(([layoutName, layoutComponent]) => {
-      _layout[layoutName as keyof CompoundComponentType] = layoutComponent;
-    });
-  }
+  Object.entries(CompoundComponent).forEach(([layoutName, layoutComponent]) => {
+    _layout[layoutName as keyof CompoundComponentType] = layoutComponent;
+  });
 
   return _layout;
-};
-
-const wrapperComponentBuilder = <T extends {}>(
-  WrapperComponent: React.FC<T>,
-  LayoutComponent: React.FC<any>,
-) => {
-  return function anonymous(props: T) {
-    return (
-      <LayoutComponent {...props}>
-        <WrapperComponent {...props} />
-      </LayoutComponent>
-    );
-  };
 };
 
 /** 에러 메시지의 일관성을 지키기 위해 에러 메시지를 생성하는 빌더 함수입니다. */
