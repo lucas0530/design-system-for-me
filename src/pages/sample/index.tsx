@@ -4,9 +4,11 @@ import CounterSection from '@/components/Organisms/sections/sample/CounterSectio
 const SamplePage = () => {
   return (
     <SampleLayout>
-      <SampleLayout.Header spellCheck>
-        <SampleLayout.Header></SampleLayout.Header>
-      </SampleLayout.Header>
+      <SampleLayout.Header></SampleLayout.Header>
+      <SampleLayout.Body>
+        <CounterSection />
+      </SampleLayout.Body>
+      <SampleLayout.Footer></SampleLayout.Footer>
     </SampleLayout>
   );
 };
