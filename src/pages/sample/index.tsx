@@ -4,8 +4,8 @@ import CounterSection from '@/components/Organisms/sections/sample/CounterSectio
 const SamplePage = () => {
   return (
     <SampleLayout>
-      <SampleLayout.Header>
-        <CounterSection />
+      <SampleLayout.Header spellCheck>
+        <SampleLayout.Header></SampleLayout.Header>
       </SampleLayout.Header>
     </SampleLayout>
   );

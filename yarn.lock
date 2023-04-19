@@ -1350,6 +1350,13 @@ combined-stream@^1.0.8:
   dependencies:
     delayed-stream "~1.0.0"
 
+compound-builder@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/compound-builder/-/compound-builder-1.0.3.tgz#509a9cae7296284670a6e1311a3d60b82ca65e3b"
+  integrity sha512-8w8namZ5j15gLZ8brPRhxXbphE3Tu93j7gayjxRQiK0+koROWXNVkCTdMAZTz8eB2m8A9Dryqhx7jBzxHno24A==
+  dependencies:
+    pluralize "^8.0.0"
+
 concat-map@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
@@ -3130,6 +3137,11 @@ pkg-types@^1.0.0:
     jsonc-parser "^3.2.0"
     mlly "^1.0.0"
     pathe "^1.0.0"
+
+pluralize@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-8.0.0.tgz#1a6fa16a38d12a1901e0320fa017051c539ce3b1"
+  integrity sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==
 
 postcss@8.4.14:
   version "8.4.14"

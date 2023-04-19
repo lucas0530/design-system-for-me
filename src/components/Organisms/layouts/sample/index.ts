@@ -1,6 +1,5 @@
+import { compoundBuilder } from 'compound-builder';
 import constate from 'constate';
-
-import { compoundBuilder } from '@/utils/builder';
 
 import useSampleLayout from './index.hook';
 import { SampleBody, SampleFooter, SampleHeader } from './index.style';
